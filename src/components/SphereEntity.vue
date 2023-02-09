@@ -2,11 +2,14 @@
 import { Camera, GltfModel, PointLight, Renderer, Scene } from 'troisjs';
 import { onMounted, ref } from 'vue';
 
-import SphereModel from '../assets/sphere.glb?url';
+import SphereModel from '../assets/untitled.glb?url';
 
 const renderer = ref();
 const light = ref();
 
+const onLoad = (o) => {
+  console.log(o);
+};
 onMounted(() => {
   const pointerV3 = renderer.value.three.pointer.positionV3;
   renderer.value.onBeforeRender(() => {
@@ -32,7 +35,10 @@ onMounted(() => {
         :intensity="10"
         :position="{ x: 0, y: 0, z: 0 }"
       />
-      <GltfModel :src="SphereModel" />
+      <GltfModel
+        :src="SphereModel"
+        @load="onLoad"
+      />
     </Scene>
   </Renderer>
 </template>
