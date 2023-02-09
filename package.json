@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "98.css": "^0.1.18",
     "@vueuse/core": "^9.12.0",
     "three": "0.134",
     "troisjs": "^0.3.4",

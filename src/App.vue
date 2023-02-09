@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import SphereEntity from './components/SphereEntity.vue';
+import Windows from './components/Windows.vue';
 </script>
 
 <template>
-  <SphereEntity />
+  <Windows />
 </template>
