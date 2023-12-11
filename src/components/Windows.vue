@@ -46,51 +46,52 @@
   <button
     v-if="isClosed"
     @click="isClosed = false"
+    style="position: absolute; z-index: 50; top: 5%; left: 5%"
   >
     Reset
   </button>
 </template>
 
 <script setup lang="ts">
-import { useDraggable } from '@vueuse/core';
-import { reactive, ref } from 'vue';
+import { useDraggable } from '@vueuse/core'
+import { reactive, ref } from 'vue'
 
-const window = ref<HTMLElement | null>(null);
-const titleBar = ref<HTMLElement | null>(null);
+const window = ref<HTMLElement | null>(null)
+const titleBar = ref<HTMLElement | null>(null)
 
-const isClosed = ref(false);
-const isMaximized = ref(false);
+const isClosed = ref(false)
+const isMaximized = ref(false)
 
 const initialSize = {
   width: '250px',
   height: 'initial',
-};
-const windowSize = reactive(initialSize);
+}
+const windowSize = reactive(initialSize)
 
 const { x, y, style } = useDraggable(window, {
   initialValue: { x: 40, y: 40 },
   handle: titleBar,
-});
+})
 
 const maximizeWindow = () => {
-  if (!window.value) return;
+  if (!window.value) return
   if (isMaximized.value) {
     Object.assign(window.value.style, {
       top: x.value,
       left: y.value,
       ...initialSize,
-    });
-    isMaximized.value = false;
+    })
+    isMaximized.value = false
   } else {
     Object.assign(window.value.style, {
       top: 0,
       left: 0,
       width: '100%',
       height: '100%',
-    });
-    isMaximized.value = true;
+    })
+    isMaximized.value = true
   }
-};
+}
 </script>
 
 <style>

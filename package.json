@@ -13,7 +13,8 @@
     "@vueuse/core": "^9.12.0",
     "three": "0.134",
     "troisjs": "^0.3.4",
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@types/three": "^0.149.0",

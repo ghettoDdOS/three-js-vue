@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Windows from './components/Windows.vue';
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <Windows />
+  <RouterView />
 </template>
